@@ -1,0 +1,15 @@
+{
+  "name": "Customer Care CRM (PHP + MariaDB)",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/var/www/html",
+  "shutdownAction": "stopCompose",
+  "forwardPorts": [80],
+  "portsAttributes": {
+    "80": { "label": "CRM web app", "onAutoForward": "openBrowser" }
+  },
+  "postAttachCommand": "echo 'CRM is running. Open the PORTS tab > port 80 if the browser did not open. Login: admin / Admin@123'",
+  "customizations": {
+    "codespaces": { "openFiles": ["README.md"] }
+  }
+}

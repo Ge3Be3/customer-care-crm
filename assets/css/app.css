@@ -1,0 +1,123 @@
+/* Theme Gia Bao Group – ghi đè Bootstrap 5.3 bằng bảng màu Deep Red / Stone */
+:root {
+    --gb-red: #660810;
+    --gb-red-hover: #4E060C;
+    --gb-red-tint: #F4E4E5;
+    --gb-stone: #F1EBEB;
+    --gb-surface: #FFFFFF;
+    --gb-border: #E3D8D8;
+    --gb-ink: #2A2121;
+    --gb-muted: #6F6060;  /* #7A6B6B darkened: 4.5:1 on stone */
+    --gb-gold: #B08D57;
+    --gb-gold-text: #8A6A36; /* gold dark enough for white badge text */
+    --gb-navy: #13244F;
+    --gb-amber: #9A6212;  /* #B7791F darkened: 4.5:1 with white text */
+    --gb-green: #2E6B4F;
+    --gb-slate: #5B6475;
+    --gb-serif: "Palatino Linotype", Palatino, Cambria, "Times New Roman", serif; /* Georgia lacks some Vietnamese glyphs */
+
+    --bs-body-bg: var(--gb-surface); /* Bootstrap reuses this for cards/inputs; page bg set on body */
+    --bs-body-color: var(--gb-ink);
+    --bs-secondary-color: var(--gb-muted);
+    --bs-border-color: var(--gb-border);
+    --bs-link-color: var(--gb-red);
+    --bs-link-color-rgb: 102, 8, 16;
+    --bs-link-hover-color: var(--gb-red-hover);
+    --bs-link-hover-color-rgb: 78, 6, 12;
+    --bs-primary: var(--gb-red);
+    --bs-primary-rgb: 102, 8, 16;
+    --bs-border-radius: .5rem;
+    --bs-focus-ring-color: rgba(102, 8, 16, .2);
+}
+
+body { background-color: var(--gb-stone); display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; }
+h1, h2, h3, h4, .brand-text { font-family: var(--gb-serif); color: var(--gb-ink); }
+h1 { font-size: 1.75rem; }
+.page-title { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.page-title h1 { margin: 0; }
+.page-title h1::after { content: ""; display: block; width: 48px; height: 2px; margin-top: .4rem; background: var(--gb-gold); }
+
+/* Navbar */
+.app-navbar { background: var(--gb-surface); border-bottom: 3px solid var(--gb-red); box-shadow: 0 1px 0 var(--gb-gold), 0 4px 16px rgba(42, 33, 33, .06); }
+.brand-text { font-size: 1.25rem; color: var(--gb-navy); }
+.app-navbar .nav-link { color: var(--gb-ink); border-bottom: 2px solid transparent; }
+.app-navbar .nav-link:hover { color: var(--gb-red); }
+.app-navbar .nav-link.active { color: var(--gb-red); font-weight: 600; border-bottom-color: var(--gb-gold); }
+
+/* Buttons */
+.btn-primary {
+    --bs-btn-bg: var(--gb-red); --bs-btn-border-color: var(--gb-red);
+    --bs-btn-hover-bg: var(--gb-red-hover); --bs-btn-hover-border-color: var(--gb-red-hover);
+    --bs-btn-active-bg: var(--gb-red-hover); --bs-btn-active-border-color: var(--gb-red-hover);
+    --bs-btn-focus-shadow-rgb: 102, 8, 16;
+}
+.btn-outline-primary {
+    --bs-btn-color: var(--gb-red); --bs-btn-border-color: var(--gb-red);
+    --bs-btn-hover-bg: var(--gb-red); --bs-btn-hover-border-color: var(--gb-red);
+    --bs-btn-active-bg: var(--gb-red-hover); --bs-btn-active-border-color: var(--gb-red-hover);
+    --bs-btn-disabled-color: var(--gb-muted); --bs-btn-disabled-border-color: var(--gb-border);
+    --bs-btn-focus-shadow-rgb: 102, 8, 16;
+}
+.btn-outline-secondary {
+    --bs-btn-color: var(--gb-muted); --bs-btn-border-color: var(--gb-border);
+    --bs-btn-hover-color: var(--gb-ink); --bs-btn-hover-bg: var(--gb-stone); --bs-btn-hover-border-color: var(--gb-border);
+    --bs-btn-active-color: var(--gb-ink); --bs-btn-active-bg: var(--gb-border); --bs-btn-active-border-color: var(--gb-border);
+}
+.form-control:focus, .form-select:focus { border-color: var(--gb-gold); box-shadow: 0 0 0 .2rem var(--bs-focus-ring-color); }
+.form-label { font-weight: 500; }
+
+/* Cards & tables: bóng nhẹ thay viền cứng */
+.card { border: 0; box-shadow: 0 1px 3px rgba(42, 33, 33, .06), 0 6px 20px rgba(42, 33, 33, .05); }
+.card-header { background: var(--gb-surface); border-bottom: 1px solid var(--gb-border); font-family: var(--gb-serif); font-size: 1.1rem; }
+.table { --bs-table-hover-bg: var(--gb-red-tint); margin-bottom: 0; }
+.table thead th { color: var(--gb-muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; background: #FBF8F8; }
+.table td, .table th { vertical-align: middle; }
+.table td:first-child { min-width: 9rem; } /* tên KH không bị bẻ từng chữ trên mobile */
+.pagination { --bs-pagination-color: var(--gb-red); --bs-pagination-active-bg: var(--gb-red); --bs-pagination-active-border-color: var(--gb-red); --bs-pagination-hover-color: var(--gb-red-hover); --bs-pagination-focus-box-shadow: 0 0 0 .2rem var(--bs-focus-ring-color); }
+.dropdown-item:active { background: var(--gb-red); }
+
+/* Thông báo */
+.alert-success { --bs-alert-color: var(--gb-green); --bs-alert-bg: #E8F2EC; --bs-alert-border-color: #C9DFD2; }
+.alert-danger  { --bs-alert-color: var(--gb-red); --bs-alert-bg: var(--gb-red-tint); --bs-alert-border-color: #E6C7CA; }
+.alert-warning { --bs-alert-color: #7A4F12; --bs-alert-bg: #FBF1E0; --bs-alert-border-color: #EFD9B3; }
+
+/* Badge lịch hẹn */
+.badge { font-weight: 500; }
+.fu-qua_han { background: var(--gb-red); color: #fff; }
+.fu-hom_nay { background: var(--gb-amber); color: #fff; }
+.fu-sap_toi { background: transparent; color: var(--gb-navy); border: 1px solid var(--gb-navy); }
+.fu-da_hen  { background: transparent; color: var(--gb-muted); border: 1px solid var(--gb-border); }
+
+/* Badge nhóm khách hàng */
+.grp-gold  { background: var(--gb-gold-text); color: #fff; }
+.grp-red   { background: var(--gb-red); color: #fff; }
+.grp-slate { background: var(--gb-slate); color: #fff; }
+.grp-green { background: var(--gb-green); color: #fff; }
+.grp-navy  { background: var(--gb-navy); color: #fff; }
+
+/* Dashboard */
+.stat-card { display: block; text-decoration: none; color: inherit; height: 100%; }
+.stat-card .card-body { border-left: 3px solid var(--gb-gold); }
+.stat-card.is-alert .card-body { border-left-color: var(--gb-red); }
+.stat-value { font-family: var(--gb-serif); font-size: 2.25rem; line-height: 1.1; color: var(--gb-red); }
+.stat-label { color: var(--gb-muted); font-size: .875rem; }
+a.stat-card:hover .card { box-shadow: 0 2px 6px rgba(42, 33, 33, .1), 0 10px 28px rgba(42, 33, 33, .08); }
+.bar { height: 8px; background: var(--gb-stone); border-radius: 4px; overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--gb-gold); }
+
+/* Chi tiết khách hàng */
+.info-list dt { color: var(--gb-muted); font-weight: 500; font-size: .875rem; }
+.info-list dd { margin-bottom: .75rem; }
+.timeline-item { border-left: 2px solid var(--gb-border); padding: 0 0 1.25rem 1.25rem; position: relative; }
+.timeline-item::before { content: ""; position: absolute; left: -6px; top: .35rem; width: 10px; height: 10px; border-radius: 50%; background: var(--gb-gold); }
+.timeline-item:last-child { padding-bottom: 0; }
+
+/* Đăng nhập */
+.login-wrap { min-height: calc(100vh - 8rem); display: flex; align-items: center; justify-content: center; }
+.login-card { width: 100%; max-width: 400px; }
+.login-card .card-body { border-top: 3px solid var(--gb-red); border-radius: var(--bs-border-radius); }
+.login-logo { display: block; width: 200px; max-width: 70%; height: auto; margin: 0 auto 1rem; }
+
+.app-footer { padding: 1.25rem 0; color: var(--gb-muted); font-size: .8rem; text-align: center; border-top: 1px solid var(--gb-border); }
+.text-pre { white-space: pre-line; }
