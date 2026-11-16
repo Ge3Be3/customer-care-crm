@@ -1,6 +1,8 @@
 # Customer Care CRM for an Electronics Retailer
 
-A web app that replaces notebooks, Excel sheets and Zalo chats in a small electronics store: one customer database, the full contact history of every customer, and reminders for the next follow-up. Built as a course project (PHP Web Programming) by **Tran Gia Bao**, starting from the business process rather than the code.
+A personal project by **Tran Gia Bao** to practice building a website in plain PHP (course: PHP Web Programming). The scenario is a fictional small electronics store that needs one customer database, the full contact history of every customer, and reminders for the next follow-up.
+
+> All customers, staff and contacts are made-up sample data.
 
 ![Admin dashboard](docs/images/screen-dashboard-admin.png)
 
@@ -22,13 +24,12 @@ A web app that replaces notebooks, Excel sheets and Zalo chats in a small electr
 
 The interface is in Vietnamese. Sample dates are generated relative to the day the database is created, so the dashboard always shows overdue, due-today and upcoming follow-ups.
 
-## Business analysis behind it
+## Analysis and design before coding
 
 | Step | Output |
 |---|---|
-| AS-IS analysis | Customer data scattered across paper notes, personal Excel files and Zalo chats; follow-ups depend on memory |
-| TO-BE process | Central customer records grouped by product interest, every contact logged with who made it, next follow-up date on each contact |
-| Scope gap found | The brief asked for one admin role. The store actually assigns staff per product group, so the design added staff accounts that own one group each |
+| Scenario and scope | Who uses the system (admin, staff) and what each needs: customer records grouped by product interest, every contact logged with who made it, a next follow-up date on each contact |
+| Beyond the brief | The brief asked for one admin role. I added staff accounts that each own one customer group, with permissions enforced on the server |
 | Use cases | Use case diagram plus specifications for "Log a contact and set the next follow-up" and "Manage customers in my group" |
 | Data model | ERD with 5 tables, foreign keys, `UNIQUE` and `CHECK` constraints |
 | Wireframes | Dashboard, customer list and contact form drawn before development |
